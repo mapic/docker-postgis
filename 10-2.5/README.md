@@ -1,8 +1,8 @@
-# mdillon/postgis
+# postgis/postgis
 
-[![Build Status](https://travis-ci.org/appropriate/docker-postgis.svg)](https://travis-ci.org/appropriate/docker-postgis) [![Join the chat at https://gitter.im/appropriate/docker-postgis](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/appropriate/docker-postgis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://github.com/postgis/docker-postgis/workflows/Docker%20PostGIS%20CI/badge.svg)](https://github.com/postgis/docker-postgis/actions) [![Join the chat at https://gitter.im/postgis/docker-postgis](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/postgis/docker-postgis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-The `mdillon/postgis` image provides a Docker container running Postgres with [PostGIS 2.5](http://postgis.net/) installed. This image is based on the official [`postgres`](https://registry.hub.docker.com/_/postgres/) image and provides variants for each version of Postgres 9 supported by the base image (9.4-9.6), Postgres 10, and Postgres 11.
+The `postgis/postgis` image provides tags for running Postgres with [PostGIS](http://postgis.net/) extensions installed. This image is based on the official [`postgres`](https://registry.hub.docker.com/_/postgres/) image and provides debian and alpine variants for PostGIS both 2.5.x and 3.1.x for each supported version of Postgres (9.5, 9.6, 10, 11, 12 and 13).  Additionally, an image version is provided which is built from the latest version of Postgres (13) with versions of PostGIS and its dependencies built from their respective master branches.
 
 This image ensures that the default database created by the parent `postgres` image will have the following extensions installed:
 
@@ -17,7 +17,7 @@ Unless `-e POSTGRES_DB` is passed to the container at startup time, this databas
 
 In order to run a basic container capable of serving a PostGIS-enabled database, start a container as follows:
 
-    docker run --name some-postgis -e POSTGRES_PASSWORD=mysecretpassword -d mdillon/postgis
+    docker run --name some-postgis -e POSTGRES_PASSWORD=mysecretpassword -d postgis/postgis
 
 For more detailed instructions about how to start and control your Postgres container, see the documentation for the `postgres` image [here](https://registry.hub.docker.com/_/postgres/).
 
